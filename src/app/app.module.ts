@@ -11,6 +11,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [AppComponent, PromptControllerComponent, PainPromptComponent],
@@ -23,6 +24,7 @@ import { MatSliderModule } from '@angular/material/slider';
     MatButtonModule,
     MatCardModule,
     MatSliderModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
