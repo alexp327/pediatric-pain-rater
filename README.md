@@ -2,6 +2,10 @@
 
 This is an Angular 15 application using Material UI to assist medical professionals in rating pediatric patient's pain.
 
+Created by [Alex Perry](https://twitter.com/pezvstheworld)
+
+Tweet @ me or DM me with any issues!
+
 # Angular Generated Info
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
