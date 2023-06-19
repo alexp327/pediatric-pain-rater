@@ -13,9 +13,20 @@ import { MatCardModule } from '@angular/material/card';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MetadataFormComponent } from './metadata-form/metadata-form.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
-  declarations: [AppComponent, PromptControllerComponent, PainPromptComponent],
+  declarations: [
+    AppComponent,
+    PromptControllerComponent,
+    PainPromptComponent,
+    MetadataFormComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -27,6 +38,12 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatSliderModule,
     MatIconModule,
     MatCheckboxModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatRadioModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
