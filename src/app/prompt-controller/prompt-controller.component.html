@@ -1,20 +1,30 @@
 <div class="container">
-  <!-- <h3>
-    Estimate the level of pain with the following activities. If the activity
-    was not performed in the past week, check the box below the slider.
-  </h3>
-  <p>
-    <strong
-      >Based on your experiences in the past week, how much shoulder pain do you
-      experience when:</strong
-    >
-  </p> -->
-  <!-- <app-pain-prompt></app-pain-prompt> -->
   <app-metadata-form
+    *ngIf="curPrompt < 0; else promptBlock"
     (metadataSubmit)="handleMetadataSubmit($event)"
   ></app-metadata-form>
+  <ng-template #promptBlock>
+    <h3>
+      Estimate the level of pain with the following activities. If the activity
+      was not performed in the past week, check the box below the slider.
+    </h3>
+    <p>
+      <strong
+        >Based on your experiences in the past week, how much shoulder pain do
+        you experience when:</strong
+      >
+    </p>
+    <app-pain-prompt
+      [question]="prompts[curPrompt].question"
+      [image]="prompts[curPrompt].image"
+    ></app-pain-prompt>
+  </ng-template>
   <div class="nav-buttons">
-    <button mat-stroked-button color="primary">Previous</button>
-    <button mat-stroked-button color="primary">Next</button>
+    <button mat-stroked-button color="primary" (click)="handlePrevious()">
+      Previous
+    </button>
+    <button mat-stroked-button color="primary" (click)="handleNext()">
+      Next
+    </button>
   </div>
 </div>

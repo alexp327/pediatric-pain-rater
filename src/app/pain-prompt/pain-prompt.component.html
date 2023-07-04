@@ -1,10 +1,7 @@
 <mat-card>
   <div class="prompt-container">
-    <img
-      src="https://pool.hesperian.org/w/images/thumb/0/06/DVC_Ch43_Page_394-3.png/305px-DVC_Ch43_Page_394-3.png"
-      alt=""
-    />
-    <p>Transferring from a bed to a wheelchair?</p>
+    <img [src]="'../../assets/' + image" alt="" />
+    <p>{{ question }}</p>
     <mat-slider max="10" step="0.1">
       <input matSliderThumb />
     </mat-slider>
