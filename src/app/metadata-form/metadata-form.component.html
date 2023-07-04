@@ -1,0 +1,41 @@
+Value: {{ metaForm.value | json }}
+
+<h2>Personal Information</h2>
+<form [formGroup]="metaForm">
+  <mat-form-field>
+    <mat-label>ID Number</mat-label>
+    <input matInput placeholder="######" formControlName="personId" required />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Dominant Hand</mat-label>
+    <mat-select formControlName="dominantHand" required>
+      <mat-option value="right">Right</mat-option>
+      <mat-option value="left">Left</mat-option>
+      <mat-option value="both">Both</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Number of Surgeries</mat-label>
+    <input matInput formControlName="numSurgeries" required />
+    <mat-error *ngIf="numSurgeries!.invalid && numSurgeries!.touched"
+      >Must be a number
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Sex</mat-label>
+    <mat-select formControlName="sex" required>
+      <mat-option value="male">Male</mat-option>
+      <mat-option value="female">Female</mat-option>
+      <mat-option value="other">Other</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="primary"
+    [disabled]="metaForm.invalid"
+    (click)="handleFormSubmit()"
+  >
+    Submit
+  </button>
+</form>
