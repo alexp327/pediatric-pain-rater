@@ -14,9 +14,12 @@
         you experience when:</strong
       >
     </p>
+    <!-- change this to send the prompt object -->
     <app-pain-prompt
       [question]="prompts[curPrompt].question"
       [image]="prompts[curPrompt].image"
+      [response]="responses[curPrompt]"
+      (responseChange)="handleResponseChange($event)"
     ></app-pain-prompt>
   </ng-template>
   <div class="nav-buttons">

@@ -17,7 +17,7 @@ export class PromptControllerComponent {
   };
 
   // if -1, show meta form. Else show prompt #(curPrompt)
-  curPrompt: number = 0;
+  curPrompt: number = -1;
 
   prompts: Prompt[] = [
     {
@@ -30,6 +30,7 @@ export class PromptControllerComponent {
     },
   ];
 
+  // this populates on init
   responses: PprResponse[] = [];
 
   ngOnInit() {
@@ -55,8 +56,15 @@ export class PromptControllerComponent {
   }
 
   handleNext() {
-    if (this.curPrompt < this.prompts.length) {
+    if (this.curPrompt < this.prompts.length - 1) {
       this.curPrompt++;
     }
+  }
+
+  handleResponseChange(newResponse: PprResponse) {
+    console.log('Response change');
+    console.log(newResponse);
+    this.responses[this.curPrompt] = newResponse;
+    console.log(this.responses);
   }
 }
