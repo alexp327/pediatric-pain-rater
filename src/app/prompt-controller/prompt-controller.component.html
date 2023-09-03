@@ -1,7 +1,6 @@
 <div class="container">
   <app-metadata-form
     *ngIf="curPrompt < 0; else promptBlock"
-    (metadataSubmit)="handleMetadataSubmit($event)"
   ></app-metadata-form>
   <ng-template #promptBlock>
     <h3>

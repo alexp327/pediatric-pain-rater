@@ -1,0 +1,20 @@
+<!-- <mat-card *ngFor="let prompt of prompts; let i = index"> -->
+<form [formGroup]="shoulderForm">
+  <ng-container *ngFor="let prompt of questionnaire.controls; let i = index">
+    <!-- this is an individual prompt -->
+    <div class="prompt-row" [formGroupName]="i">
+      <mat-card>
+        <div class="prompt-container">
+          <img [src]="'../../assets/' + prompts[i].image" alt="" />
+          <p>{{ prompts[i].question }}</p>
+          <mat-slider max="10" step="0.1">
+            <input matSliderThumb formControlName="rating" />
+          </mat-slider>
+          <mat-checkbox formControlName="notPerformed"
+            >Patient has not performed this in the past week</mat-checkbox
+          >
+        </div>
+      </mat-card>
+    </div>
+  </ng-container>
+</form>

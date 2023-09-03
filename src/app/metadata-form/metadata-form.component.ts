@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { MetaInfo } from '../shared/meta-info';
+import { SubmitMetadataService } from '../services/submit-metadata.service';
 
 @Component({
   selector: 'app-metadata-form',
@@ -13,11 +14,12 @@ import { MetaInfo } from '../shared/meta-info';
   styleUrls: ['./metadata-form.component.scss'],
 })
 export class MetadataFormComponent {
-  @Output() metadataSubmit = new EventEmitter<MetaInfo>();
-
   metaForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private submitService: SubmitMetadataService
+  ) {}
 
   ngOnInit() {
     this.metaForm = this.fb.group({
@@ -47,7 +49,7 @@ export class MetadataFormComponent {
   }
 
   handleFormSubmit() {
-    this.metadataSubmit.emit({
+    this.submitService.changeMetadata({
       personId: this.metaForm.get('personId') as unknown as string,
       dominantHand: this.metaForm.get('dominantHand') as unknown as string,
       numSurgeries: this.metaForm.get('numSurgeries') as unknown as number,

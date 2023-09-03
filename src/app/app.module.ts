@@ -19,6 +19,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
+import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
+import { ResultsComponent } from './results/results.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { MatRadioModule } from '@angular/material/radio';
     PromptControllerComponent,
     PainPromptComponent,
     MetadataFormComponent,
+    QuestionnaireComponent,
+    ResultsComponent,
   ],
   imports: [
     BrowserModule,
