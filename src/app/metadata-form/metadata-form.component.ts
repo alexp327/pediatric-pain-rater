@@ -18,7 +18,7 @@ export class MetadataFormComponent {
 
   constructor(
     private fb: FormBuilder,
-    private submitService: SubmitMetadataService
+    private submitMetadataService: SubmitMetadataService
   ) {}
 
   ngOnInit() {
@@ -31,6 +31,12 @@ export class MetadataFormComponent {
 
     this.metaForm.valueChanges.subscribe(console.log);
   }
+
+  /*
+  *************************************
+    TODO: these gets can be improved!
+  *************************************  
+  */
 
   get personId() {
     return this.metaForm.get('personId');
@@ -49,7 +55,7 @@ export class MetadataFormComponent {
   }
 
   handleFormSubmit() {
-    this.submitService.changeMetadata({
+    this.submitMetadataService.changeMetadata({
       personId: this.metaForm.get('personId') as unknown as string,
       dominantHand: this.metaForm.get('dominantHand') as unknown as string,
       numSurgeries: this.metaForm.get('numSurgeries') as unknown as number,

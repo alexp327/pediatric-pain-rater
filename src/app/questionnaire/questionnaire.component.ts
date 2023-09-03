@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Prompt } from '../shared/prompt';
+import { SubmitQuestionnaireService } from '../services/submit-questionnaire.service';
 
 @Component({
   selector: 'app-questionnaire',
@@ -22,7 +23,10 @@ export class QuestionnaireComponent {
     },
   ];
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private submitQuestService: SubmitQuestionnaireService
+  ) {}
 
   ngOnInit() {
     this.shoulderForm = this.fb.group({
@@ -33,7 +37,7 @@ export class QuestionnaireComponent {
       this.questionnaire.push(
         this.fb.group({
           prompt: this.prompts[i].question,
-          rating: [-1, Validators.min(0)],
+          rating: 0,
           notPerformed: false,
         })
       );
@@ -44,5 +48,9 @@ export class QuestionnaireComponent {
 
   get questionnaire() {
     return this.shoulderForm.controls['questionnaire'] as FormArray;
+  }
+
+  handleFormSubmit() {
+    this.submitQuestService.changeQuestionnaire(this.questionnaire.value);
   }
 }
