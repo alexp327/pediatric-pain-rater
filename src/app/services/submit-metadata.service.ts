@@ -12,6 +12,7 @@ export class SubmitMetadataService {
     numSurgeries: -1,
     sex: '',
   });
+  currentMetadata = this.metadataSource.asObservable();
 
   constructor() {}
 

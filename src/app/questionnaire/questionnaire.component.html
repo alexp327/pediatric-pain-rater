@@ -1,4 +1,5 @@
-<!-- <mat-card *ngFor="let prompt of prompts; let i = index"> -->
+Value: {{ shoulderForm.value | json }}
+
 <form [formGroup]="shoulderForm">
   <ng-container formArrayName="questionnaire">
     <ng-container *ngFor="let prompt of questionnaire.controls; let i = index">
@@ -23,3 +24,8 @@
     Submit
   </button>
 </form>
+
+<div class="nav-buttons">
+  <a mat-stroked-button color="primary" routerLink="/">Previous</a>
+  <a mat-stroked-button color="primary" routerLink="/results">Next</a>
+</div>

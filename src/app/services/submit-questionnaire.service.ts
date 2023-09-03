@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 })
 export class SubmitQuestionnaireService {
   private questionnaireSource = new BehaviorSubject<any[]>([]);
+  currentResults = this.questionnaireSource.asObservable();
 
   constructor() {}
 
