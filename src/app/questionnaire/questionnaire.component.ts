@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Prompt } from '../shared/prompt';
 import { SubmitQuestionnaireService } from '../services/submit-questionnaire.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-questionnaire',
@@ -25,7 +26,8 @@ export class QuestionnaireComponent {
 
   constructor(
     private fb: FormBuilder,
-    private submitQuestService: SubmitQuestionnaireService
+    private submitQuestService: SubmitQuestionnaireService,
+    private _router: Router
   ) {}
 
   ngOnInit() {
@@ -52,5 +54,15 @@ export class QuestionnaireComponent {
 
   handleFormSubmit() {
     this.submitQuestService.changeQuestionnaire(this.questionnaire.value);
+  }
+
+  handlePrevious() {
+    this.handleFormSubmit();
+    this._router.navigateByUrl('/');
+  }
+
+  handleNext() {
+    this.handleFormSubmit();
+    this._router.navigateByUrl('/results');
   }
 }

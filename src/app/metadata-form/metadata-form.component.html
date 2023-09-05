@@ -29,18 +29,14 @@ Value: {{ metaForm.value | json }}
       <mat-option value="other">Other</mat-option>
     </mat-select>
   </mat-form-field>
+</form>
 
-  <button
-    mat-raised-button
+<div class="nav-buttons">
+  <a
+    mat-stroked-button
     color="primary"
     [disabled]="metaForm.invalid"
-    (click)="handleFormSubmit()"
+    (click)="handleNext()"
+    >Next</a
   >
-    Submit
-  </button>
-
-  <div class="nav-buttons">
-    <a mat-stroked-button color="primary" disabled>Previous</a>
-    <a mat-stroked-button color="primary" routerLink="/questionnaire">Next</a>
-  </div>
-</form>
+</div>

@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { MetaInfo } from '../shared/meta-info';
 import { SubmitMetadataService } from '../services/submit-metadata.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-metadata-form',
@@ -18,7 +19,8 @@ export class MetadataFormComponent {
 
   constructor(
     private fb: FormBuilder,
-    private submitMetadataService: SubmitMetadataService
+    private submitMetadataService: SubmitMetadataService,
+    private _router: Router
   ) {}
 
   ngOnInit() {
@@ -61,5 +63,10 @@ export class MetadataFormComponent {
       numSurgeries: this.metaForm.get('numSurgeries') as unknown as number,
       sex: this.metaForm.get('sex') as unknown as string,
     });
+  }
+
+  handleNext() {
+    this.handleFormSubmit();
+    this._router.navigateByUrl('/questionnaire');
   }
 }

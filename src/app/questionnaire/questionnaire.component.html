@@ -20,12 +20,9 @@ Value: {{ shoulderForm.value | json }}
       </div>
     </ng-container>
   </ng-container>
-  <button mat-raised-button color="primary" (click)="handleFormSubmit()">
-    Submit
-  </button>
 </form>
 
 <div class="nav-buttons">
-  <a mat-stroked-button color="primary" routerLink="/">Previous</a>
-  <a mat-stroked-button color="primary" routerLink="/results">Next</a>
+  <a mat-stroked-button color="primary" (click)="handlePrevious()">Previous</a>
+  <a mat-stroked-button color="primary" (click)="handleNext()">Next</a>
 </div>
