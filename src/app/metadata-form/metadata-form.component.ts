@@ -6,6 +6,8 @@ import {
   Validators,
 } from '@angular/forms';
 import { MetaInfo } from '../shared/meta-info';
+import { SubmitMetadataService } from '../services/submit-metadata.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-metadata-form',
@@ -13,11 +15,13 @@ import { MetaInfo } from '../shared/meta-info';
   styleUrls: ['./metadata-form.component.scss'],
 })
 export class MetadataFormComponent {
-  @Output() metadataSubmit = new EventEmitter<MetaInfo>();
-
   metaForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private submitMetadataService: SubmitMetadataService,
+    private _router: Router
+  ) {}
 
   ngOnInit() {
     this.metaForm = this.fb.group({
@@ -29,6 +33,12 @@ export class MetadataFormComponent {
 
     this.metaForm.valueChanges.subscribe(console.log);
   }
+
+  /*
+  *************************************
+    TODO: these gets can be improved!
+  *************************************  
+  */
 
   get personId() {
     return this.metaForm.get('personId');
@@ -47,11 +57,16 @@ export class MetadataFormComponent {
   }
 
   handleFormSubmit() {
-    this.metadataSubmit.emit({
+    this.submitMetadataService.changeMetadata({
       personId: this.metaForm.get('personId') as unknown as string,
       dominantHand: this.metaForm.get('dominantHand') as unknown as string,
       numSurgeries: this.metaForm.get('numSurgeries') as unknown as number,
       sex: this.metaForm.get('sex') as unknown as string,
     });
+  }
+
+  handleNext() {
+    this.handleFormSubmit();
+    this._router.navigateByUrl('/questionnaire');
   }
 }

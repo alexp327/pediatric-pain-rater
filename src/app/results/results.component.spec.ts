@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PainPromptComponent } from './pain-prompt.component';
+import { ResultsComponent } from './results.component';
 
-describe('PainPromptComponent', () => {
-  let component: PainPromptComponent;
-  let fixture: ComponentFixture<PainPromptComponent>;
+describe('ResultsComponent', () => {
+  let component: ResultsComponent;
+  let fixture: ComponentFixture<ResultsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PainPromptComponent ]
+      declarations: [ ResultsComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PainPromptComponent);
+    fixture = TestBed.createComponent(ResultsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

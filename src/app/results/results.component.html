@@ -1,0 +1,27 @@
+<div class="metadata">
+  Metadata:
+  {{ metadata.personId.value }}
+  {{ metadata.dominantHand.value }}
+  {{ metadata.numSurgeries.value }}
+  {{ metadata.sex.value }}
+</div>
+<div class="results">
+  Results:
+  {{ results[0].rating }}
+  here are all the responses
+  <div *ngFor="let result of results; let i = index">
+    Question #{{ i }}<br />
+    {{ result.rating }}
+  </div>
+</div>
+
+<p>
+  This is where I need direction on how to present the data. I can format a
+  table to make the information easily copy-able into an excel sheet, have each
+  submission emailed to a specific email address, or something else that we come
+  up with.
+</p>
+
+<div class="nav-buttons">
+  <a mat-stroked-button color="primary" routerLink="/questionnaire">Previous</a>
+</div>
