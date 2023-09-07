@@ -48,16 +48,18 @@ export class QuestionnaireComponent {
     return this.shoulderForm.controls['questionnaire'] as FormArray;
   }
 
-  // TODO: Come back to this to set initial values for the sliders and checkboxes
   setInitialValues() {
     this.submitQuestService.currentResults.subscribe((data) => {
-      console.log('data');
-      console.log(data);
+      for (let i = 0; i < prompts.length; i++) {
+        this.questionnaire.at(i).setValue(data[i]);
+      }
     });
   }
 
   handleFormSubmit() {
-    this.submitQuestService.changeQuestionnaire(this.questionnaire.value);
+    this.submitQuestService.changeQuestionnaire(
+      this.questionnaire.getRawValue()
+    );
   }
 
   handlePrevious() {
