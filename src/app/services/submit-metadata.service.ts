@@ -9,7 +9,8 @@ export class SubmitMetadataService {
   private metadataSource = new BehaviorSubject<MetaInfo>({
     personId: '',
     dominantHand: '',
-    numSurgeries: -1,
+    //@ts-ignore
+    numSurgeries: undefined,
     sex: '',
   });
   currentMetadata = this.metadataSource.asObservable();

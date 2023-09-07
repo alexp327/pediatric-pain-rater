@@ -32,6 +32,13 @@ export class MetadataFormComponent {
     });
 
     this.metaForm.valueChanges.subscribe(console.log);
+
+    this.submitMetadataService.currentMetadata.subscribe((data) => {
+      this.personId?.setValue(data.personId);
+      this.dominantHand?.setValue(data.dominantHand);
+      this.numSurgeries?.setValue(data.numSurgeries);
+      this.sex?.setValue(data.sex);
+    });
   }
 
   get personId() {
