@@ -58,10 +58,10 @@ export class MetadataFormComponent {
 
   handleFormSubmit() {
     this.submitMetadataService.changeMetadata({
-      personId: this.metaForm.get('personId') as unknown as string,
-      dominantHand: this.metaForm.get('dominantHand') as unknown as string,
-      numSurgeries: this.metaForm.get('numSurgeries') as unknown as number,
-      sex: this.metaForm.get('sex') as unknown as string,
+      personId: this.personId?.getRawValue(),
+      dominantHand: this.dominantHand?.getRawValue(),
+      numSurgeries: this.numSurgeries?.getRawValue(),
+      sex: this.sex?.getRawValue(),
     });
   }
 

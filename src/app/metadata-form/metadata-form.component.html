@@ -17,7 +17,7 @@ Value: {{ metaForm.value | json }}
   <mat-form-field>
     <mat-label>Number of Surgeries</mat-label>
     <input matInput formControlName="numSurgeries" required />
-    <mat-error *ngIf="numSurgeries!.invalid && numSurgeries!.touched"
+    <mat-error *ngIf="numSurgeries?.invalid && numSurgeries?.touched"
       >Must be a number
     </mat-error>
   </mat-form-field>
