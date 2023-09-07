@@ -3,6 +3,7 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Prompt } from '../shared/prompt';
 import { SubmitQuestionnaireService } from '../services/submit-questionnaire.service';
 import { Router } from '@angular/router';
+import { prompts } from '../shared/prompt-list';
 
 @Component({
   selector: 'app-questionnaire',
@@ -12,17 +13,7 @@ import { Router } from '@angular/router';
 export class QuestionnaireComponent {
   shoulderForm!: FormGroup;
 
-  // add new prompts and images here
-  prompts: Prompt[] = [
-    {
-      question: 'How heavy is a pound of bricks?',
-      image: 'bricks.jpg',
-    },
-    {
-      question: 'How much wood could a woodchuck chuck?',
-      image: 'woodchuck.jpg',
-    },
-  ];
+  prompts: Prompt[] = prompts;
 
   constructor(
     private fb: FormBuilder,
@@ -35,10 +26,10 @@ export class QuestionnaireComponent {
       questionnaire: this.fb.array([]),
     });
 
-    for (let i = 0; i < this.prompts.length; i++) {
+    for (let i = 0; i < prompts.length; i++) {
       this.questionnaire.push(
         this.fb.group({
-          prompt: this.prompts[i].question,
+          prompt: prompts[i].question,
           rating: 0,
           notPerformed: false,
         })
@@ -46,10 +37,23 @@ export class QuestionnaireComponent {
     }
 
     this.shoulderForm.valueChanges.subscribe(console.log);
+
+    this.setInitialValues();
+
+    console.log('here is the questionnaire');
+    console.log(this.questionnaire);
   }
 
   get questionnaire() {
     return this.shoulderForm.controls['questionnaire'] as FormArray;
+  }
+
+  // TODO: Come back to this to set initial values for the sliders and checkboxes
+  setInitialValues() {
+    this.submitQuestService.currentResults.subscribe((data) => {
+      console.log('data');
+      console.log(data);
+    });
   }
 
   handleFormSubmit() {
