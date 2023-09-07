@@ -34,12 +34,6 @@ export class MetadataFormComponent {
     this.metaForm.valueChanges.subscribe(console.log);
   }
 
-  /*
-  *************************************
-    TODO: these gets can be improved!
-  *************************************  
-  */
-
   get personId() {
     return this.metaForm.get('personId');
   }
