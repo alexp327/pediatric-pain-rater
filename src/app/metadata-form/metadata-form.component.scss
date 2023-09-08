@@ -2,7 +2,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 30px 100px;
+  padding: 1rem 2rem;
 }
 
 mat-form-field {
@@ -14,10 +14,29 @@ a {
   min-height: 100%;
 }
 
+.title-text {
+  text-align: center;
+  font-weight: normal;
+}
+
+.wrapper {
+  margin: 2rem auto;
+  max-width: 950px;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 1rem;
+  filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+}
+
 .nav-buttons {
-  margin-top: 1rem;
   width: 100%;
   height: 5rem;
   display: flex;
   gap: 1rem;
+}
+
+@media only screen and (max-width: 1025px) {
+  .wrapper {
+    margin: 2rem 2rem;
+  }
 }
