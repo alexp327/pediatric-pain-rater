@@ -39,9 +39,6 @@ export class QuestionnaireComponent {
     this.shoulderForm.valueChanges.subscribe(console.log);
 
     this.setInitialValues();
-
-    console.log('here is the questionnaire');
-    console.log(this.questionnaire);
   }
 
   get questionnaire() {
@@ -50,6 +47,10 @@ export class QuestionnaireComponent {
 
   setInitialValues() {
     this.submitQuestService.currentResults.subscribe((data) => {
+      if (data.length == 0) {
+        return;
+      }
+
       for (let i = 0; i < prompts.length; i++) {
         this.questionnaire.at(i).setValue(data[i]);
       }
@@ -70,5 +71,14 @@ export class QuestionnaireComponent {
   handleNext() {
     this.handleFormSubmit();
     this._router.navigateByUrl('/results');
+  }
+
+  handleCheckboxClick(index: number) {
+    let curResponse = this.questionnaire.at(index).getRawValue();
+    if (curResponse.notPerformed == true) {
+      this.questionnaire.at(index).get('rating')?.disable();
+    } else {
+      this.questionnaire.at(index).get('rating')?.enable();
+    }
   }
 }

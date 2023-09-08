@@ -12,7 +12,9 @@ Value: {{ shoulderForm.value | json }}
             <mat-slider max="10" step="0.1">
               <input matSliderThumb formControlName="rating" />
             </mat-slider>
-            <mat-checkbox formControlName="notPerformed"
+            <mat-checkbox
+              formControlName="notPerformed"
+              (click)="handleCheckboxClick(i)"
               >Patient has not performed this in the past week</mat-checkbox
             >
           </div>
