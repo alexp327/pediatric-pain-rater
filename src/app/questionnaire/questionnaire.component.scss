@@ -1,7 +1,10 @@
 mat-card {
   padding: 2rem;
   margin-bottom: 2rem;
-  background-color: #ffffff;
+}
+
+h2 {
+  font-weight: 500;
 }
 
 img {
@@ -12,6 +15,11 @@ img {
 
 mat-slider {
   width: 75%;
+}
+
+a {
+  width: 100%;
+  min-height: 100%;
 }
 
 .wrapper {
@@ -38,11 +46,6 @@ mat-slider {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-a {
-  width: 100%;
-  min-height: 100%;
 }
 
 .nav-buttons {
