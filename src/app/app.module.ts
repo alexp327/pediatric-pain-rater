@@ -19,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
 import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
 import { ResultsComponent } from './results/results.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { ResultsComponent } from './results/results.component';
     FormsModule,
     ReactiveFormsModule,
     MatRadioModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
