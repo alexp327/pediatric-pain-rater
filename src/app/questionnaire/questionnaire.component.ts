@@ -66,12 +66,12 @@ export class QuestionnaireComponent {
     );
   }
 
-  handlePrevious() {
+  handleBack() {
     this.handleFormSubmit();
     this._router.navigateByUrl('/');
   }
 
-  handleNext() {
+  handleSubmit() {
     this.handleFormSubmit();
     this._router.navigateByUrl('/results');
   }
