@@ -1,13 +1,36 @@
 mat-card {
   padding: 2rem;
+  margin-bottom: 2rem;
+  background-color: #ffffff;
 }
 
 img {
-  width: 30%;
+  width: 50%;
+  max-width: 500px;
+  margin-bottom: 1rem;
 }
 
 mat-slider {
   width: 75%;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 950px;
+  padding: 1rem;
+}
+
+.q-and-img-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
+.question {
+  width: 100%;
+  font-size: larger;
 }
 
 .prompt-container {
