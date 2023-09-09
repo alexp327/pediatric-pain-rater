@@ -20,26 +20,13 @@ a {
   margin: 1rem 0;
 }
 
-.information {
-  width: 100%;
-}
-
-.last-row {
-  border-bottom: none;
-}
-
-.meta-row {
-  display: flex;
-  width: 100%;
-}
-
-.meta-row-content {
-  width: 100%;
-}
-
 .table-wrapper {
   margin-bottom: 1rem;
   padding: .5rem 1rem;
+}
+
+.capitalize {
+  text-transform: capitalize;
 }
 
 .nav-buttons {
