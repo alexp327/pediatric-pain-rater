@@ -12,7 +12,5 @@ export class SubmitQuestionnaireService {
 
   changeQuestionnaire(results: any[]) {
     this.questionnaireSource.next(results);
-    console.log('changed the questionnairesource');
-    console.log(this.questionnaireSource);
   }
 }

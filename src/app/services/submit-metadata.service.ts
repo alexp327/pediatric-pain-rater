@@ -19,7 +19,5 @@ export class SubmitMetadataService {
 
   changeMetadata(metadata: MetaInfo) {
     this.metadataSource.next(metadata);
-    console.log('changed the metadata');
-    console.log(this.metadataSource);
   }
 }

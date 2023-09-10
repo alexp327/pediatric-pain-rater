@@ -36,8 +36,6 @@ export class QuestionnaireComponent {
       );
     }
 
-    this.shoulderForm.valueChanges.subscribe(console.log);
-
     this.setInitialValues();
   }
 
