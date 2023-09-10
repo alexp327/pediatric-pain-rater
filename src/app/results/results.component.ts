@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { SubmitMetadataService } from '../services/submit-metadata.service';
 import { SubmitQuestionnaireService } from '../services/submit-questionnaire.service';
+import { MetaInfo } from '../shared/meta-info';
+import { PprResponse } from '../shared/ppr-response';
 
 @Component({
   selector: 'app-results',
@@ -8,8 +10,8 @@ import { SubmitQuestionnaireService } from '../services/submit-questionnaire.ser
   styleUrls: ['./results.component.scss'],
 })
 export class ResultsComponent {
-  metadata: any;
-  results: any;
+  metadata!: MetaInfo;
+  results!: PprResponse[];
 
   metadataTableInfo: any[] = [];
 

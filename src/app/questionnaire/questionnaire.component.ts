@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { Prompt } from '../shared/prompt';
 import { SubmitQuestionnaireService } from '../services/submit-questionnaire.service';
 import { Router } from '@angular/router';
