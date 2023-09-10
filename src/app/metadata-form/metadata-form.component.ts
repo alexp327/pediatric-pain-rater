@@ -31,8 +31,6 @@ export class MetadataFormComponent {
       sex: ['', [Validators.required]],
     });
 
-    this.metaForm.valueChanges.subscribe(console.log);
-
     this.submitMetadataService.currentMetadata.subscribe((data) => {
       this.personId?.setValue(data.personId);
       this.dominantHand?.setValue(data.dominantHand);

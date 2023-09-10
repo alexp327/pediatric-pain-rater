@@ -3,6 +3,32 @@ a {
   min-height: 100%;
 }
 
+.wrapper {
+  margin: 0 auto;
+  max-width: 950px;
+  padding: 1rem;
+}
+
+.metadata-wrapper {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+
+.title-text {
+  font-weight: 500;
+  margin: 1rem 0;
+}
+
+.table-wrapper {
+  margin-bottom: 1rem;
+  padding: .5rem 1rem;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
 .nav-buttons {
   margin-top: 1rem;
   width: 100%;

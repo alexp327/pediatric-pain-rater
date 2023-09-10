@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { Prompt } from '../shared/prompt';
 import { SubmitQuestionnaireService } from '../services/submit-questionnaire.service';
 import { Router } from '@angular/router';
@@ -36,8 +36,6 @@ export class QuestionnaireComponent {
       );
     }
 
-    this.shoulderForm.valueChanges.subscribe(console.log);
-
     this.setInitialValues();
   }
 
@@ -53,6 +51,9 @@ export class QuestionnaireComponent {
 
       for (let i = 0; i < prompts.length; i++) {
         this.questionnaire.at(i).setValue(data[i]);
+        if (data[i].notPerformed) {
+          this.questionnaire.at(i).get('rating')?.disable();
+        }
       }
     });
   }
@@ -63,19 +64,19 @@ export class QuestionnaireComponent {
     );
   }
 
-  handlePrevious() {
+  handleBack() {
     this.handleFormSubmit();
     this._router.navigateByUrl('/');
   }
 
-  handleNext() {
+  handleSubmit() {
     this.handleFormSubmit();
     this._router.navigateByUrl('/results');
   }
 
   handleCheckboxClick(index: number) {
     let curResponse = this.questionnaire.at(index).getRawValue();
-    if (curResponse.notPerformed == true) {
+    if (curResponse.notPerformed) {
       this.questionnaire.at(index).get('rating')?.disable();
     } else {
       this.questionnaire.at(index).get('rating')?.enable();

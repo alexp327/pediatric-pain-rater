@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { SubmitMetadataService } from '../services/submit-metadata.service';
 import { SubmitQuestionnaireService } from '../services/submit-questionnaire.service';
+import { MetaInfo } from '../shared/meta-info';
+import { PprResponse } from '../shared/ppr-response';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-results',
@@ -8,12 +11,18 @@ import { SubmitQuestionnaireService } from '../services/submit-questionnaire.ser
   styleUrls: ['./results.component.scss'],
 })
 export class ResultsComponent {
-  metadata: any;
-  results: any;
+  metadata!: MetaInfo;
+  results!: PprResponse[];
+
+  metadataTableInfo: any[] = [];
+
+  displayedResultsColumns: string[] = ['prompt', 'rating'];
+  displayedMetadataColumns: string[] = ['info', 'input'];
 
   constructor(
     private metaService: SubmitMetadataService,
-    private questService: SubmitQuestionnaireService
+    private questService: SubmitQuestionnaireService,
+    private _router: Router
   ) {}
 
   ngOnInit() {
@@ -23,5 +32,32 @@ export class ResultsComponent {
     this.questService.currentResults.subscribe(
       (results) => (this.results = results)
     );
+
+    this.loadMetadataTableInfo();
+  }
+
+  loadMetadataTableInfo() {
+    this.metadataTableInfo.push({
+      info: 'ID',
+      input: this.metadata.personId,
+    });
+    this.metadataTableInfo.push({
+      info: 'Dominant Hand',
+      input: this.metadata.dominantHand,
+    });
+    this.metadataTableInfo.push({
+      info: 'Number of Surgeries',
+      input: this.metadata.numSurgeries,
+    });
+    this.metadataTableInfo.push({
+      info: 'Sex',
+      input: this.metadata.sex,
+    });
+  }
+
+  handleNewSubmission() {
+    this.metaService.resetMetadata();
+    this.questService.resetQuestionnaire();
+    this._router.navigateByUrl('/');
   }
 }
