@@ -20,4 +20,14 @@ export class SubmitMetadataService {
   changeMetadata(metadata: MetaInfo) {
     this.metadataSource.next(metadata);
   }
+
+  resetMetadata() {
+    this.metadataSource.next({
+      personId: '',
+      dominantHand: '',
+      //@ts-ignore
+      numSurgeries: undefined,
+      sex: '',
+    });
+  }
 }

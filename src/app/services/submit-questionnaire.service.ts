@@ -14,4 +14,8 @@ export class SubmitQuestionnaireService {
   changeQuestionnaire(results: PprResponse[]) {
     this.questionnaireSource.next(results);
   }
+
+  resetQuestionnaire() {
+    this.questionnaireSource.next([]);
+  }
 }

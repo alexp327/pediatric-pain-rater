@@ -3,6 +3,7 @@ import { SubmitMetadataService } from '../services/submit-metadata.service';
 import { SubmitQuestionnaireService } from '../services/submit-questionnaire.service';
 import { MetaInfo } from '../shared/meta-info';
 import { PprResponse } from '../shared/ppr-response';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-results',
@@ -20,7 +21,8 @@ export class ResultsComponent {
 
   constructor(
     private metaService: SubmitMetadataService,
-    private questService: SubmitQuestionnaireService
+    private questService: SubmitQuestionnaireService,
+    private _router: Router
   ) {}
 
   ngOnInit() {
@@ -51,5 +53,11 @@ export class ResultsComponent {
       info: 'Sex',
       input: this.metadata.sex,
     });
+  }
+
+  handleNewSubmission() {
+    this.metaService.resetMetadata();
+    this.questService.resetQuestionnaire();
+    this._router.navigateByUrl('/');
   }
 }
