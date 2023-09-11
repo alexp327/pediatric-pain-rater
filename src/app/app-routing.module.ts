@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: '', component: MetadataFormComponent },
   { path: 'questionnaire', component: QuestionnaireComponent },
   { path: 'results', component: ResultsComponent },
+  { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];
 
 @NgModule({
