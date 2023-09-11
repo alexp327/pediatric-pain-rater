@@ -7,7 +7,13 @@
 }
 
 .app-header-text {
-  margin: auto .5rem;
+  margin: auto 0.5rem;
   font-size: large;
   font-weight: normal;
+}
+
+@media only screen and (max-width: 420px) {
+  .header-contents {
+    justify-content: center;
+  }
 }
