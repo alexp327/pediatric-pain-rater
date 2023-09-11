@@ -6,7 +6,7 @@ form {
 }
 
 mat-form-field {
-  width: 100%
+  width: 100%;
 }
 
 a {
@@ -32,7 +32,7 @@ a {
   gap: 1rem;
 }
 
-@media only screen and (max-width: 1025px) {
+@media screen and (max-width: 1025px) {
   .wrapper {
     margin: 2rem 2rem;
   }
