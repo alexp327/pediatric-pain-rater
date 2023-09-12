@@ -1,3 +1,10 @@
+footer {
+  background-color: #aed581;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .header-contents {
   margin: 0 auto;
   padding: 0 1rem;
@@ -10,6 +17,21 @@
   margin: auto 0.5rem;
   font-size: large;
   font-weight: normal;
+}
+
+.footer-text {
+  width: fit-content;
+  margin: 2rem 0 0.5rem;
+}
+
+.social-icons {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 5px;
+}
+
+.social-img-content {
+  display: block;
 }
 
 @media screen and (max-width: 420px) {
