@@ -5,6 +5,12 @@ footer {
   align-items: center;
 }
 
+.grid-wrapper {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
 .header-contents {
   margin: 0 auto;
   padding: 0 1rem;
