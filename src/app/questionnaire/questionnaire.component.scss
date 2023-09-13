@@ -46,6 +46,17 @@ a {
   font-size: larger;
 }
 
+.slider-label {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.worst-pain-text {
+  text-align: right;
+}
+
 .prompt-container {
   display: flex;
   flex-direction: column;
@@ -77,5 +88,9 @@ a {
     flex-direction: column-reverse;
     gap: 0;
     align-items: center;
+  }
+
+  .slider-label {
+    margin-bottom: 1rem;
   }
 }
