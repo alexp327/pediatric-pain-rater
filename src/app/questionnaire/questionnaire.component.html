@@ -9,10 +9,10 @@
     <span>Back</span>
   </a>
   <mat-card>
-    <h2>Shoulder Pain Assessment</h2>
+    <h2>WUSPI Shoulder Pain Assessment</h2>
     <p>
-      Please rate the following actions on the unmarked pain scale, with left
-      being no pain to right being more painful.
+      Please rate the pain performing the following actions on the slider, with
+      left being no pain to right being most pain ever experienced.
     </p>
   </mat-card>
   <form [formGroup]="shoulderForm">
@@ -31,6 +31,10 @@
               <mat-slider max="10" step="0.1">
                 <input matSliderThumb formControlName="rating" />
               </mat-slider>
+              <div class="slider-label">
+                <span>No pain</span>
+                <span class="worst-pain-text">Worst pain ever experienced</span>
+              </div>
               <mat-checkbox
                 formControlName="notPerformed"
                 (click)="handleCheckboxClick(i)"

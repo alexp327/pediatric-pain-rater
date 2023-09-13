@@ -8,10 +8,13 @@ const routes: Routes = [
   { path: '', component: MetadataFormComponent },
   { path: 'questionnaire', component: QuestionnaireComponent },
   { path: 'results', component: ResultsComponent },
+  { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

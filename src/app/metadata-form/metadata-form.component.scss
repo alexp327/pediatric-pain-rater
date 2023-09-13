@@ -1,12 +1,10 @@
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 1rem 0;
+mat-card {
+  padding: 2rem;
+  margin-bottom: 0;
 }
 
 mat-form-field {
-  width: 100%
+  width: 100%;
 }
 
 a {
@@ -20,9 +18,9 @@ a {
 }
 
 .wrapper {
-  margin: 2rem auto;
+  margin: 0 auto;
   max-width: 950px;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .nav-buttons {
@@ -32,8 +30,8 @@ a {
   gap: 1rem;
 }
 
-@media only screen and (max-width: 1025px) {
-  .wrapper {
-    margin: 2rem 2rem;
+@media screen and (max-width: 600px) {
+  mat-card {
+    padding: 1.5rem;
   }
 }

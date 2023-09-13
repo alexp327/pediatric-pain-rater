@@ -22,11 +22,26 @@ a {
 
 .table-wrapper {
   margin-bottom: 1rem;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .capitalize {
   text-transform: capitalize;
+}
+
+.mat-column-info {
+  border-right: 1px solid #e0e0e0;
+  width: 75%;
+}
+
+.mat-column-prompt {
+  border-right: 1px solid #e0e0e0;
+  width: 75%;
+}
+
+tr.mat-mdc-footer-row td {
+  border-top: 1px solid #e0e0e0;
+  font-weight: bold;
 }
 
 .nav-buttons {

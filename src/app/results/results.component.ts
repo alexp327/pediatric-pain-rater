@@ -11,8 +11,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./results.component.scss'],
 })
 export class ResultsComponent {
+  // TODO: initialize these?
   metadata!: MetaInfo;
   results!: PprResponse[];
+  wuspiScore: number = 0;
 
   metadataTableInfo: any[] = [];
 
@@ -29,9 +31,10 @@ export class ResultsComponent {
     this.metaService.currentMetadata.subscribe(
       (metadata) => (this.metadata = metadata)
     );
-    this.questService.currentResults.subscribe(
-      (results) => (this.results = results)
-    );
+    this.questService.currentResults.subscribe((results) => {
+      this.results = results;
+      this.calcWuspiScore();
+    });
 
     this.loadMetadataTableInfo();
   }
@@ -53,6 +56,19 @@ export class ResultsComponent {
       info: 'Sex',
       input: this.metadata.sex,
     });
+  }
+
+  calcWuspiScore() {
+    let sumScores = 0;
+    let numAnswered = 0;
+    this.results.forEach((result) => {
+      if (!result.notPerformed) {
+        sumScores += result.rating;
+        numAnswered++;
+      }
+    });
+    this.wuspiScore = (sumScores / numAnswered) * this.results.length;
+    this.wuspiScore = Math.round(this.wuspiScore * 10) / 10;
   }
 
   handleNewSubmission() {

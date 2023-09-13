@@ -22,28 +22,20 @@
       <ng-container matColumnDef="prompt">
         <th mat-header-cell *matHeaderCellDef>Question</th>
         <td mat-cell *matCellDef="let result">{{ result.prompt }}</td>
+        <td mat-footer-cell *matFooterCellDef>WUSPI Score</td>
       </ng-container>
       <ng-container matColumnDef="rating">
         <th mat-header-cell *matHeaderCellDef>Pain Rating</th>
         <td mat-cell *matCellDef="let result">
           {{ result.notPerformed ? "Not Performed" : result.rating }}
         </td>
+        <td mat-footer-cell *matFooterCellDef>{{ wuspiScore }}</td>
       </ng-container>
       <tr mat-header-row *matHeaderRowDef="displayedResultsColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedResultsColumns"></tr>
+      <tr mat-footer-row *matFooterRowDef="displayedResultsColumns"></tr>
     </table>
   </mat-card>
-
-  <p>
-    This is where I need direction on how to present the data. I can format a
-    table to make the information easily copy-able into an excel sheet, have
-    each submission emailed to a specific email address, or something else that
-    we come up with.
-  </p>
-  <p>
-    Can also put a button here to start a new form since it is likely there will
-    be many in a row
-  </p>
 
   <div class="nav-buttons">
     <a mat-stroked-button color="primary" routerLink="/questionnaire">Back</a>
