@@ -1,10 +1,19 @@
-# PediatricPainRater
+# WUSPI Shoulder Pain Rating Tool
 
-This is an Angular 15 application using Material UI to assist medical professionals in rating pediatric patient's pain.
+This is a web application used to assist medical staff in assessing wheelchair users' pain using the WUSPI questionnaire. The form asks for patient info and ratings on 15 different activities, then neatly presents the data once submitted. This data is not saved or stored anywhere - it is lost once the user closes the tab or refreshes.
 
-Created by [Alex Perry](https://twitter.com/pezvstheworld)
+Created by [Alex Perry](https://twitter.com/pezvstheworld). Tweet @ me or DM me with any issues!
 
-Tweet @ me or DM me with any issues!
+## Technology Used
+
+- Angular 15
+- Angular Material UI
+- NodeJS 18.16.0
+- Typescript / HTML / SCSS
+
+## Takeaways
+
+This was an enjoyable, relatively easy project for me to first learn what building applications for a customer on my own is like. From a technical perspective, I learned about planning and building applications with the big picture in mind, in addition to specifics such as Angular, routing, components, and CSS/SCSS. From a non-technical perspective, I learned about communication with customers, gathering and understanding their requirements, and even time management.
 
 # Angular Generated Info
 
