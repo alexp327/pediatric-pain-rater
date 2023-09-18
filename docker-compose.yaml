@@ -1,0 +1,20 @@
+# local configuration
+# services:
+#   server:
+#     build:
+#       context: .
+#       target: local
+#     image: alexp327/pediatric-pain-rater
+#     ports:
+#       - 4200:4200
+#     volumes:
+#       - .:/app
+
+# production configuration
+services:
+  server:
+    build:
+      context: .
+      target: prod
+    ports:
+      - 8080:80

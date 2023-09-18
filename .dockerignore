@@ -1,0 +1,12 @@
+.angular
+.editorconfig
+.firebaserc
+.git
+.gitignore
+
+Dockerfile
+firebase.json
+README.md
+
+/.vscode
+/node_modules

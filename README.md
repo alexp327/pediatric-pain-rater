@@ -7,13 +7,14 @@ Created by [Alex Perry](https://twitter.com/pezvstheworld). Tweet @ me or DM me 
 ## Technology Used
 
 - Angular 15
+- Docker
 - Angular Material UI
 - NodeJS 18.16.0
 - Typescript / HTML / SCSS
 
 ## Takeaways
 
-This was an enjoyable, relatively easy project for me to first learn what building applications for a customer on my own is like. From a technical perspective, I learned about planning and building applications with the big picture in mind, in addition to specifics such as Angular, routing, components, and CSS/SCSS. From a non-technical perspective, I learned about communication with customers, gathering and understanding their requirements, and even time management.
+This was an enjoyable, relatively easy project for me to first learn what building applications for a customer on my own is like. From a technical perspective, I learned about planning and building applications with the big picture in mind, in addition to specifics such as Angular, routing, components, and CSS/SCSS. After I completed development of the application, I also used this as a way to learn how to use Docker and containerize application to standardize the development process. From a non-technical perspective, I learned about communication with customers, gathering and understanding their requirements, and even time management.
 
 # Angular Generated Info
 
