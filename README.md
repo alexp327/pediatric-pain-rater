@@ -4,8 +4,6 @@ This is a web application used to assist medical staff in assessing wheelchair u
 
 Created by [Alex Perry](https://twitter.com/pezvstheworld). Tweet @ me or DM me with any issues!
 
-testing | another change!
-
 Docker image can be found [here](https://hub.docker.com/repository/docker/alexp327/pediatric-pain-rater-server)
 
 ## Technology Used
