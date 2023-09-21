@@ -13,6 +13,7 @@ Docker image can be found [here](https://hub.docker.com/repository/docker/alexp3
 - Angular Material UI
 - NodeJS 18.16.0
 - Typescript / HTML / SCSS
+- Reactive Forms
 
 ## Takeaways
 
