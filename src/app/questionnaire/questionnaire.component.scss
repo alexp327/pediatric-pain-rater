@@ -53,6 +53,20 @@ a {
   gap: 1rem;
 }
 
+.pain-faces {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.pain-faces img {
+  flex: 1 1 auto;
+  width: auto;
+  height: auto;
+  max-width: 5rem;
+  object-fit: scale-down;
+}
+
 .worst-pain-text {
   text-align: right;
 }
