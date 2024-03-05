@@ -4,27 +4,11 @@
     <form [formGroup]="metaForm">
       <mat-form-field>
         <mat-label>ID Number</mat-label>
-        <input
-          matInput
-          placeholder="######"
-          formControlName="personId"
-          required
-        />
+        <input matInput formControlName="personId" required />
       </mat-form-field>
       <mat-form-field>
-        <mat-label>Dominant Hand</mat-label>
-        <mat-select formControlName="dominantHand" required>
-          <mat-option value="right">Right</mat-option>
-          <mat-option value="left">Left</mat-option>
-          <mat-option value="both">Both</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Number of Surgeries</mat-label>
-        <input matInput formControlName="numSurgeries" required />
-        <mat-error *ngIf="numSurgeries?.invalid && numSurgeries?.touched"
-          >Must be a number
-        </mat-error>
+        <mat-label>Age</mat-label>
+        <input matInput formControlName="age" required />
       </mat-form-field>
       <mat-form-field>
         <mat-label>Sex</mat-label>
@@ -33,6 +17,65 @@
           <mat-option value="female">Female</mat-option>
           <mat-option value="other">Other</mat-option>
         </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Years in Wheelchair</mat-label>
+        <input matInput formControlName="yearsInWheelchair" required />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Wheelchair Type</mat-label>
+        <mat-select formControlName="wheelchairType" required>
+          <mat-option value="manual">Manual</mat-option>
+          <mat-option value="power">Power</mat-option>
+          <mat-option value="both">Both</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Primary Diagnosis</mat-label>
+        <input matInput formControlName="primaryDiagnosis" required />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label
+          >How many times do you get in and out of your wheelchair per
+          day</mat-label
+        >
+        <input matInput formControlName="numTransfers" required />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Life Changing Event</mat-label>
+        <input matInput formControlName="lifeChange" required />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Been to hospital in past year</mat-label>
+        <input matInput formControlName="toHospital" required />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Had surgery</mat-label>
+        <input matInput formControlName="hadSurgery" required />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Had Therapy</mat-label>
+        <input matInput formControlName="hadTherapy" required />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Active Therapy</mat-label>
+        <input matInput formControlName="activeTherapy" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Wheelchair Skills</mat-label>
+        <input matInput formControlName="wheelchairSkills" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Arm Strengthening</mat-label>
+        <input matInput formControlName="armStrengthening" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Stop Info</mat-label>
+        <input matInput formControlName="stopInfo" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Other</mat-label>
+        <input matInput formControlName="other" />
       </mat-form-field>
     </form>
 

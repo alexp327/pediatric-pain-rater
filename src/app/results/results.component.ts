@@ -44,14 +44,14 @@ export class ResultsComponent {
       info: 'ID',
       input: this.metadata.personId,
     });
-    this.metadataTableInfo.push({
-      info: 'Dominant Hand',
-      input: this.metadata.dominantHand,
-    });
-    this.metadataTableInfo.push({
-      info: 'Number of Surgeries',
-      input: this.metadata.numSurgeries,
-    });
+    // this.metadataTableInfo.push({
+    //   info: 'Dominant Hand',
+    //   input: this.metadata.dominantHand,
+    // });
+    // this.metadataTableInfo.push({
+    //   info: 'Number of Surgeries',
+    //   input: this.metadata.numSurgeries,
+    // });
     this.metadataTableInfo.push({
       info: 'Sex',
       input: this.metadata.sex,
