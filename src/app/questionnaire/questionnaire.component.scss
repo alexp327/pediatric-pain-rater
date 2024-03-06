@@ -8,7 +8,7 @@ h2 {
 }
 
 img {
-  width: 50%;
+  width: 100%;
   max-width: 500px;
   margin-bottom: 1rem;
 }
@@ -36,9 +36,13 @@ a {
 .q-and-img-wrapper {
   width: 100%;
   display: flex;
-  flex-direction: row;
-  gap: 1rem;
+  flex-direction: column-reverse;
+  gap: 0;
   align-items: center;
+}
+
+.q-and-img-wrapper p {
+  width: fit-content;
 }
 
 .question {
@@ -46,24 +50,17 @@ a {
   font-size: larger;
 }
 
-.slider-label {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
 .pain-faces {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  max-height: 6rem;
 }
 
 .pain-faces img {
-  flex: 1 1 auto;
   width: auto;
   height: auto;
-  max-width: 5rem;
+  max-width: 15%;
   object-fit: scale-down;
 }
 
@@ -89,22 +86,6 @@ a {
 @media screen and (max-width: 600px) {
   mat-card {
     padding: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  img {
-    width: 100%;
-    max-width: 500px;
-    margin-bottom: 1rem;
-  }
-
-  .q-and-img-wrapper {
-    flex-direction: column-reverse;
-    gap: 0;
-    align-items: center;
-  }
-
-  .slider-label {
     margin-bottom: 1rem;
   }
 }

@@ -7,63 +7,86 @@ import { Prompt } from './prompt';
 
 export const prompts: Prompt[] = [
   {
-    question: 'Transfer from bed to wheelchair',
+    question: "My shoulders have hurt while I've used a wheelchair.",
     image: 'ramp.jfif',
   },
   {
-    question: 'Transfer from wheelchair to car',
+    question: 'My shoulder hurts right now.',
+    image: 'ramp.jfif',
+  },
+  {
+    question: 'How long have you had shoulder pain?',
     image: 'woodchuck.jpg',
   },
   {
-    question: 'Transfer from wheelchair to tub/shower',
+    question: 'When my shoulder hurts, it makes me mad.',
     image: 'wheelchair.jfif',
   },
   {
-    question: 'Loading wheelchair into car',
+    question: 'I wake up at night because my shoulder hurts.',
     image: 'ramp.jfif',
   },
   {
-    question: 'Pushing chair for more than 10 minutes',
+    question: 'I can move my shoulders easily.',
     image: 'woodchuck.jpg',
   },
   {
-    question: 'Pushing up ramps or other inclines outdoors',
+    question:
+      "My hands or elbows have hurt while I've been using a wheelchair.",
     image: 'wheelchair.jfif',
   },
   {
-    question: 'Lifting objects from overhead shelves',
+    question: 'Getting out of my bed to my wheelchair',
     image: 'ramp.jfif',
   },
   {
-    question: 'Putting on pants',
+    question: 'Getting from my wheelchair into a car',
     image: 'woodchuck.jpg',
   },
   {
-    question: 'Putting on t-shirts or pullovers',
+    question: 'Getting from my wheelchair into the tub or shower',
     image: 'wheelchair.jfif',
   },
   {
-    question: 'Putting on a button-down shirt',
+    question: 'Going up or down a ramp or a hill',
     image: 'ramp.jfif',
   },
   {
-    question: 'Washing back',
+    question: 'Reaching down to put my pants on',
     image: 'woodchuck.jpg',
   },
   {
-    question: 'Daily activities at work or school',
+    question: 'Putting on shirts, sweatshirts, or coats',
     image: 'wheelchair.jfif',
   },
   {
-    question: 'Driving',
+    question: 'Tucking in my shirt into my pants',
     image: 'ramp.jfif',
   },
   {
-    question: 'Household chores',
+    question:
+      "I sometimes don't want to hand out with friends because my shoulder hurts.",
     image: 'woodchuck.jpg',
   },
   {
-    question: 'Sleeping',
+    question:
+      "I sometimes don't want to go to school because my shoulder hurts.",
+    image: 'wheelchair.jfif',
+  },
+  {
+    question: "I sometimes don't want to play because my shoulder hurts.",
+    image: 'wheelchair.jfif',
+  },
+  {
+    question: 'Reaching back to wash my hair/back/backside hurts',
+    image: 'wheelchair.jfif',
+  },
+  {
+    question: 'Doing schoolwork hurts my shoulder',
+    image: 'wheelchair.jfif',
+  },
+  {
+    question: 'Doing chores at home that use my shoulder hurts',
     image: 'wheelchair.jfif',
   },
 ];
