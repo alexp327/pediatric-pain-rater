@@ -17,6 +17,7 @@ export class AppComponent {
     wheelchairType: '',
     primaryDiagnosis: '',
     numTransfers: -1,
+    newWheelchair: '',
     lifeChange: '',
     toHospital: '',
     hadSurgery: '',

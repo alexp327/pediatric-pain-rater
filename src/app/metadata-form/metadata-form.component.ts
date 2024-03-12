@@ -41,6 +41,7 @@ export class MetadataFormComponent {
         null,
         [Validators.required, Validators.pattern('^[0-9]*$')],
       ],
+      newWheelchair: ['', [Validators.required]],
       lifeChange: ['', [Validators.required]],
       toHospital: ['', [Validators.required]],
       hadSurgery: ['', [Validators.required]],
@@ -60,6 +61,7 @@ export class MetadataFormComponent {
       this.wheelchairType?.setValue(data.wheelchairType);
       this.primaryDiagnosis?.setValue(data.primaryDiagnosis);
       this.numTransfers?.setValue(data.numTransfers);
+      this.newWheelchair?.setValue(data.lifeChange);
       this.lifeChange?.setValue(data.lifeChange);
       this.toHospital?.setValue(data.toHospital);
       this.hadSurgery?.setValue(data.hadSurgery);
@@ -81,6 +83,7 @@ export class MetadataFormComponent {
       wheelchairType: this.wheelchairType?.getRawValue(),
       primaryDiagnosis: this.primaryDiagnosis?.getRawValue(),
       numTransfers: this.numTransfers?.getRawValue(),
+      newWheelchair: this.newWheelchair?.getRawValue(),
       lifeChange: this.lifeChange?.getRawValue(),
       toHospital: this.toHospital?.getRawValue(),
       hadSurgery: this.hadSurgery?.getRawValue(),
@@ -124,6 +127,10 @@ export class MetadataFormComponent {
 
   get numTransfers() {
     return this.metaForm.get('numTransfers');
+  }
+
+  get newWheelchair() {
+    return this.metaForm.get('newWheelchair');
   }
 
   get lifeChange() {

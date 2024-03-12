@@ -17,6 +17,7 @@ export class SubmitMetadataService {
     primaryDiagnosis: '',
     // @ts-expect-error
     numTransfers: null,
+    newWheelchair: '',
     lifeChange: '',
     toHospital: '',
     hadSurgery: '',
@@ -49,6 +50,7 @@ export class SubmitMetadataService {
       primaryDiagnosis: '',
       // @ts-expect-error
       numTransfers: null,
+      newWheelchair: '',
       lifeChange: '',
       toHospital: '',
       hadSurgery: '',
