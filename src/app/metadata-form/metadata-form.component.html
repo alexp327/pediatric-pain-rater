@@ -1,6 +1,7 @@
 <div class="wrapper">
   <mat-card>
     <h2 class="title-text">Patient Information</h2>
+    <p>* indicates required question</p>
     <form [formGroup]="metaForm">
       <p>1) ID *</p>
       <mat-form-field>
@@ -18,7 +19,7 @@
           <mat-option value="other">Other</mat-option>
         </mat-select>
       </mat-form-field>
-      <p>4) How long have you been using a wheelchair? *</p>
+      <p>4) How many years have you been using a wheelchair? *</p>
       <mat-form-field>
         <input matInput formControlName="yearsInWheelchair" required />
       </mat-form-field>

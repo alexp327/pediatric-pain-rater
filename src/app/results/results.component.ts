@@ -53,55 +53,55 @@ export class ResultsComponent {
       input: this.metadata.sex,
     });
     this.metadataTableInfo.push({
-      info: 'Years in wheelchair',
+      info: 'Years in Wheelchair',
       input: this.metadata.yearsInWheelchair,
     });
     this.metadataTableInfo.push({
-      info: 'Wheelchair type',
+      info: 'Wheelchair Type',
       input: this.metadata.wheelchairType,
     });
     this.metadataTableInfo.push({
-      info: 'Primary diagnosis',
+      info: 'Primary Diagnosis',
       input: this.metadata.primaryDiagnosis,
     });
     this.metadataTableInfo.push({
-      info: 'Number of transfers',
+      info: 'Number of Transfers per Day',
       input: this.metadata.numTransfers,
     });
     this.metadataTableInfo.push({
-      info: 'Life change',
+      info: 'Life Changing Event',
       input: this.metadata.lifeChange,
     });
     this.metadataTableInfo.push({
-      info: 'To hospital',
+      info: 'Hospitalized in Past Year',
       input: this.metadata.toHospital,
     });
     this.metadataTableInfo.push({
-      info: 'Had surgery',
+      info: 'Surgery in Past Year',
       input: this.metadata.hadSurgery,
     });
     this.metadataTableInfo.push({
-      info: 'Had therapy',
+      info: 'OT/PT in Past Year',
       input: this.metadata.hadTherapy,
     });
     this.metadataTableInfo.push({
-      info: 'Active therapy',
+      info: 'Still in Therapy',
       input: this.metadata.activeTherapy,
     });
     this.metadataTableInfo.push({
-      info: 'Wheelchair skills',
+      info: 'Learning Wheelchair Skills',
       input: this.metadata.wheelchairSkills,
     });
     this.metadataTableInfo.push({
-      info: 'Arm strengthening',
+      info: 'Arm Strengthening Exercises',
       input: this.metadata.armStrengthening,
     });
     this.metadataTableInfo.push({
-      info: 'Stop info',
+      info: 'Why OT/PT Stopped',
       input: this.metadata.stopInfo,
     });
     this.metadataTableInfo.push({
-      info: 'Other',
+      info: 'Other Information',
       input: this.metadata.other,
     });
   }
