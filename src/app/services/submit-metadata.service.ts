@@ -26,6 +26,8 @@ export class SubmitMetadataService {
     wheelchairSkills: '',
     armStrengthening: '',
     stopInfo: '',
+    painSide: '',
+    painTime: '',
     other: '',
   });
   currentMetadata = this.metadataSource.asObservable();
@@ -33,9 +35,11 @@ export class SubmitMetadataService {
   constructor() {}
 
   changeMetadata(metadata: MetaInfo) {
-    console.log('changing metadata to the following');
-    console.log(metadata);
     this.metadataSource.next(metadata);
+  }
+
+  hasNoPain() {
+    return this.metadataSource.value.painSide === 'neither';
   }
 
   resetMetadata() {
@@ -59,6 +63,8 @@ export class SubmitMetadataService {
       wheelchairSkills: '',
       armStrengthening: '',
       stopInfo: '',
+      painSide: '',
+      painTime: '',
       other: '',
     });
   }

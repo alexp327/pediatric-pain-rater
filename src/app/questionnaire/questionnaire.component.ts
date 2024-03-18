@@ -4,6 +4,7 @@ import { Prompt } from '../shared/prompt';
 import { SubmitQuestionnaireService } from '../services/submit-questionnaire.service';
 import { Router } from '@angular/router';
 import { prompts } from '../shared/prompt-list';
+import { SubmitMetadataService } from '../services/submit-metadata.service';
 
 @Component({
   selector: 'app-questionnaire',
@@ -17,6 +18,7 @@ export class QuestionnaireComponent {
 
   constructor(
     private fb: FormBuilder,
+    private metadataService: SubmitMetadataService,
     private submitQuestService: SubmitQuestionnaireService,
     private _router: Router
   ) {}
@@ -37,6 +39,10 @@ export class QuestionnaireComponent {
     }
 
     this.setInitialValues();
+
+    if (this.metadataService.hasNoPain()) {
+      this.handleSubmit();
+    }
   }
 
   get questionnaire() {

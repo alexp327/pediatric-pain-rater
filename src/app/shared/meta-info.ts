@@ -15,5 +15,7 @@ export interface MetaInfo {
   wheelchairSkills: string;
   armStrengthening: string;
   stopInfo: string;
+  painSide: string;
+  painTime: string;
   other: string;
 }

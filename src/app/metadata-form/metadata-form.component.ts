@@ -50,6 +50,8 @@ export class MetadataFormComponent {
       wheelchairSkills: [''],
       armStrengthening: [''],
       stopInfo: [''],
+      painSide: ['', [Validators.required]],
+      painTime: [''],
       other: [''],
     });
 
@@ -70,6 +72,8 @@ export class MetadataFormComponent {
       this.wheelchairSkills?.setValue(data.wheelchairSkills);
       this.armStrengthening?.setValue(data.armStrengthening);
       this.stopInfo?.setValue(data.stopInfo);
+      this.painSide?.setValue(data.painSide);
+      this.painTime?.setValue(data.painTime);
       this.other?.setValue(data.other);
     });
   }
@@ -92,6 +96,8 @@ export class MetadataFormComponent {
       wheelchairSkills: this.wheelchairSkills?.getRawValue(),
       armStrengthening: this.armStrengthening?.getRawValue(),
       stopInfo: this.stopInfo?.getRawValue(),
+      painSide: this.painSide?.getRawValue(),
+      painTime: this.painTime?.getRawValue(),
       other: this.other?.getRawValue(),
     });
   }
@@ -163,6 +169,14 @@ export class MetadataFormComponent {
 
   get stopInfo() {
     return this.metaForm.get('stopInfo');
+  }
+
+  get painSide() {
+    return this.metaForm.get('painSide');
+  }
+
+  get painTime() {
+    return this.metaForm.get('painTime');
   }
 
   get other() {

@@ -33,7 +33,7 @@ export class ResultsComponent {
     );
     this.questService.currentResults.subscribe((results) => {
       this.results = results;
-      this.calcWuspiScore();
+      this.calcPainScore();
     });
 
     this.loadMetadataTableInfo();
@@ -101,12 +101,20 @@ export class ResultsComponent {
       input: this.metadata.stopInfo,
     });
     this.metadataTableInfo.push({
+      info: 'Pain Side',
+      input: this.metadata.painSide,
+    });
+    this.metadataTableInfo.push({
+      info: 'Pain Time',
+      input: this.metadata.painTime,
+    });
+    this.metadataTableInfo.push({
       info: 'Other Information',
       input: this.metadata.other,
     });
   }
 
-  calcWuspiScore() {
+  calcPainScore() {
     let sumScores = 0;
     let numAnswered = 0;
     this.results.forEach((result) => {

@@ -1,9 +1,9 @@
 <div class="wrapper">
   <mat-card>
-    <h2 class="title-text">Patient Information</h2>
+    <h2 class="title-text">Participant Information</h2>
     <p>* indicates required question</p>
     <form [formGroup]="metaForm">
-      <p>1) ID *</p>
+      <p>1) Name *</p>
       <mat-form-field>
         <input matInput formControlName="personId" required />
       </mat-form-field>
@@ -91,8 +91,24 @@
       <mat-form-field>
         <input matInput formControlName="stopInfo" />
       </mat-form-field>
+      <p>17) If you have shoulder pain, which shoulder is it in? *</p>
+      <mat-form-field>
+        <mat-select formControlName="painSide" required>
+          <mat-option value="right">Right</mat-option>
+          <mat-option value="left">Left</mat-option>
+          <mat-option value="both">Both</mat-option>
+          <mat-option value="neither">Neither</mat-option>
+        </mat-select>
+      </mat-form-field>
       <p>
-        17) Please put any more information that might be important to a change
+        18) If you answered yes to question 17, how long have you had shoulder
+        pain?
+      </p>
+      <mat-form-field>
+        <input matInput formControlName="painTime" />
+      </mat-form-field>
+      <p>
+        19) Please put any more information that might be important to a change
         in how you move.
       </p>
       <mat-form-field>

@@ -26,6 +26,8 @@ export class AppComponent {
     wheelchairSkills: '',
     armStrengthening: '',
     stopInfo: '',
+    painSide: '',
+    painTime: '',
     other: '',
   };
 }
