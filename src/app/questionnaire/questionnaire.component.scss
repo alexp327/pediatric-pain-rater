@@ -84,6 +84,12 @@ a {
   gap: 1rem;
 }
 
+.section-divider {
+  font-size: larger;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 600px) {
   mat-card {
     padding: 1.5rem;

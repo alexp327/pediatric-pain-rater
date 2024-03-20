@@ -22,6 +22,12 @@
       <ng-container
         *ngFor="let prompt of questionnaire.controls; let i = index"
       >
+        <p class="section-divider" *ngIf="i === 0">
+          Upper Extremity Pain History
+        </p>
+        <p class="section-divider" *ngIf="i === 7">Moving</p>
+        <p class="section-divider" *ngIf="i === 12">Self-Care</p>
+        <p class="section-divider" *ngIf="i === 15">General Activities</p>
         <!-- this is an individual prompt -->
         <div class="prompt-row" [formGroupName]="i">
           <mat-card>
