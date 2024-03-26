@@ -4,6 +4,7 @@ import { SubmitQuestionnaireService } from '../services/submit-questionnaire.ser
 import { MetaInfo } from '../shared/meta-info';
 import { PprResponse } from '../shared/ppr-response';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-results',
@@ -24,7 +25,8 @@ export class ResultsComponent {
   constructor(
     private metaService: SubmitMetadataService,
     private questService: SubmitQuestionnaireService,
-    private _router: Router
+    private _router: Router,
+    private http: HttpClient
   ) {}
 
   ngOnInit() {
@@ -128,8 +130,51 @@ export class ResultsComponent {
   }
 
   handleNewSubmission() {
-    this.metaService.resetMetadata();
-    this.questService.resetQuestionnaire();
-    this._router.navigateByUrl('/');
+    // create form data
+    const formData = new FormData();
+    formData.append('name', this.metadata.personId);
+    formData.append('age', this.metadata.age.toString());
+    formData.append('sex', this.metadata.sex);
+    formData.append(
+      'years_in_wheelchair',
+      this.metadata.yearsInWheelchair.toString()
+    );
+    formData.append('wheelchair_type', this.metadata.wheelchairType);
+    formData.append('primary_diagnosis', this.metadata.primaryDiagnosis);
+    formData.append('num_transfers', this.metadata.numTransfers.toString());
+    formData.append('new_wheelchair', this.metadata.newWheelchair);
+    formData.append('life_change', this.metadata.lifeChange);
+    formData.append('to_hospital', this.metadata.toHospital);
+    formData.append('had_surgery', this.metadata.hadSurgery);
+    formData.append('had_therapy', this.metadata.hadTherapy);
+    formData.append('active_therapy', this.metadata.activeTherapy);
+    formData.append('wheelchair_skills', this.metadata.wheelchairSkills);
+    formData.append('arm_strengthening', this.metadata.armStrengthening);
+    formData.append('stop_info', this.metadata.stopInfo);
+    formData.append('pain_side', this.metadata.painSide);
+    formData.append('pain_time', this.metadata.painTime);
+    formData.append('other', this.metadata.other);
+    for (let i = 0; i < this.results.length; i++) {
+      formData.append(
+        'question_' + i,
+        this.results[i].notPerformed
+          ? 'not performed'
+          : this.results[i].rating.toString()
+      );
+    }
+    formData.append('pain_score', this.wuspiScore.toString());
+
+    this.http
+      .post(
+        'https://script.google.com/macros/s/AKfycbzMheGcrw3N2k_CETyX3yc2kX5uL5FM6LjfiRP76GVdjFsk3TPRhoRFbZ-Z5VTCn70F/exec',
+        formData
+      )
+      .subscribe((response) => {
+        console.log(response);
+        alert('Thank you! Your form has been submitted successfully.');
+        this.metaService.resetMetadata();
+        this.questService.resetQuestionnaire();
+        this._router.navigateByUrl('/');
+      });
   }
 }
