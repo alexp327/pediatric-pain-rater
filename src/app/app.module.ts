@@ -20,6 +20,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
 import { ResultsComponent } from './results/results.component';
 import { MatTableModule } from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { MatTableModule } from '@angular/material/table';
     ReactiveFormsModule,
     MatRadioModule,
     MatTableModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

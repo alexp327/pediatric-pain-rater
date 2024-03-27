@@ -9,10 +9,12 @@
     <span>Back</span>
   </a>
   <mat-card>
-    <h2>WUSPI Shoulder Pain Assessment</h2>
+    <h2>Pediatric Wheelchair Users Functional Shoulder Pain Index</h2>
     <p>
-      Please rate the pain performing the following actions on the slider, with
-      left being no pain to right being most pain ever experienced.
+      This assessment was created and formatted for completion by participants
+      of Indiana University’s Skills on Wheels program, assessing the impact of
+      potential upper extremity pain on functional performance in a child’s
+      day-to-day life.
     </p>
   </mat-card>
   <form [formGroup]="shoulderForm">
@@ -20,20 +22,29 @@
       <ng-container
         *ngFor="let prompt of questionnaire.controls; let i = index"
       >
+        <p class="section-divider" *ngIf="i === 0">
+          Upper Extremity Pain History
+        </p>
+        <p class="section-divider" *ngIf="i === 7">Moving</p>
+        <p class="section-divider" *ngIf="i === 12">Self-Care</p>
+        <p class="section-divider" *ngIf="i === 15">General Activities</p>
         <!-- this is an individual prompt -->
         <div class="prompt-row" [formGroupName]="i">
           <mat-card>
             <div class="prompt-container">
               <div class="q-and-img-wrapper">
                 <p class="question">{{ prompts[i].question }}</p>
-                <img [src]="'../../assets/' + prompts[i].image" alt="" />
+                <!-- <img [src]="'../../assets/' + prompts[i].image" alt="" /> -->
               </div>
-              <mat-slider max="10" step="0.1">
+              <mat-slider max="5" step="0.1">
                 <input matSliderThumb formControlName="rating" />
               </mat-slider>
-              <div class="slider-label">
-                <span>No pain</span>
-                <span class="worst-pain-text">Worst pain ever experienced</span>
+              <div class="pain-faces">
+                <img src="../../assets/1-face-pain.png" alt="" />
+                <img src="../../assets/2-face-pain.png" alt="" />
+                <img src="../../assets/3-face-pain.png" alt="" />
+                <img src="../../assets/4-face-pain.png" alt="" />
+                <img src="../../assets/5-face-pain.png" alt="" />
               </div>
               <mat-checkbox
                 formControlName="notPerformed"

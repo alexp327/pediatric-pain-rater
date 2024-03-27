@@ -11,8 +11,23 @@ export class AppComponent {
 
   metadata: MetaInfo = {
     personId: '',
-    dominantHand: '',
-    numSurgeries: -1,
+    age: -1,
     sex: '',
+    yearsInWheelchair: -1,
+    wheelchairType: '',
+    primaryDiagnosis: '',
+    numTransfers: -1,
+    newWheelchair: '',
+    lifeChange: '',
+    toHospital: '',
+    hadSurgery: '',
+    hadTherapy: '',
+    activeTherapy: '',
+    wheelchairSkills: '',
+    armStrengthening: '',
+    stopInfo: '',
+    painSide: '',
+    painTime: '',
+    other: '',
   };
 }

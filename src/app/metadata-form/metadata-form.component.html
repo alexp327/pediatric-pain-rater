@@ -1,38 +1,157 @@
 <div class="wrapper">
   <mat-card>
-    <h2 class="title-text">Patient Information</h2>
+    <h2 class="title-text">Participant Information</h2>
+    <p>* indicates required question</p>
     <form [formGroup]="metaForm">
+      <p>1) Name *</p>
       <mat-form-field>
-        <mat-label>ID Number</mat-label>
-        <input
-          matInput
-          placeholder="######"
-          formControlName="personId"
-          required
-        />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Dominant Hand</mat-label>
-        <mat-select formControlName="dominantHand" required>
-          <mat-option value="right">Right</mat-option>
-          <mat-option value="left">Left</mat-option>
-          <mat-option value="both">Both</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Number of Surgeries</mat-label>
-        <input matInput formControlName="numSurgeries" required />
-        <mat-error *ngIf="numSurgeries?.invalid && numSurgeries?.touched"
-          >Must be a number
+        <input matInput formControlName="personId" required />
+        <mat-error *ngIf="this.metaForm.get('personId')?.hasError">
+          Required.
         </mat-error>
       </mat-form-field>
+      <p>2) Age *</p>
       <mat-form-field>
-        <mat-label>Sex</mat-label>
+        <input matInput formControlName="age" required />
+        <mat-error *ngIf="this.metaForm.get('age')?.hasError">
+          Required. Must be a number.
+        </mat-error>
+      </mat-form-field>
+      <p>3) Sex *</p>
+      <mat-form-field>
         <mat-select formControlName="sex" required>
           <mat-option value="male">Male</mat-option>
           <mat-option value="female">Female</mat-option>
           <mat-option value="other">Other</mat-option>
         </mat-select>
+        <mat-error *ngIf="this.metaForm.get('sex')?.hasError">
+          Required.
+        </mat-error>
+      </mat-form-field>
+      <p>4) How many years have you been using a wheelchair? *</p>
+      <mat-form-field>
+        <input matInput formControlName="yearsInWheelchair" required />
+        <mat-error *ngIf="this.metaForm.get('yearsInWheelchair')?.hasError">
+          Required. Must be a number.
+        </mat-error>
+      </mat-form-field>
+      <p>5) What kind of wheelchair do you use? *</p>
+      <mat-form-field>
+        <mat-select formControlName="wheelchairType" required>
+          <mat-option value="manual">Manual</mat-option>
+          <mat-option value="power">Power</mat-option>
+          <mat-option value="both">Both</mat-option>
+        </mat-select>
+        <mat-error *ngIf="this.metaForm.get('wheelchairType')?.hasError">
+          Required.
+        </mat-error>
+      </mat-form-field>
+      <p>6) What is your primary diagnosis? *</p>
+      <mat-form-field>
+        <input matInput formControlName="primaryDiagnosis" required />
+        <mat-error *ngIf="this.metaForm.get('primaryDiagnosis')?.hasError">
+          Required.
+        </mat-error>
+      </mat-form-field>
+      <p>
+        7) How many times do you get in and out of your wheelchair per day? *
+      </p>
+      <mat-form-field>
+        <input matInput formControlName="numTransfers" required />
+        <mat-error *ngIf="this.metaForm.get('numTransfers')?.hasError">
+          Required. Must be a number.
+        </mat-error>
+      </mat-form-field>
+      <p>8) Have you gotten a new wheelchair in the past year? *</p>
+      <mat-form-field>
+        <input matInput formControlName="newWheelchair" required />
+        <mat-error *ngIf="this.metaForm.get('newWheelchair')?.hasError">
+          Required.
+        </mat-error>
+      </mat-form-field>
+      <p>
+        9) Have you gone through a life-changing event in the past year? If so,
+        what was it? *
+      </p>
+      <mat-form-field>
+        <input matInput formControlName="lifeChange" required />
+        <mat-error *ngIf="this.metaForm.get('lifeChange')?.hasError">
+          Required.
+        </mat-error>
+      </mat-form-field>
+      <p>
+        10) Have you been taken to the hospital in the past year? If so, why and
+        for how long? *
+      </p>
+      <mat-form-field>
+        <textarea matInput formControlName="toHospital" required></textarea>
+        <mat-error *ngIf="this.metaForm.get('toHospital')?.hasError">
+          Required.
+        </mat-error>
+      </mat-form-field>
+      <p>11) Have you had surgery in the past year? If so, what for? *</p>
+      <mat-form-field>
+        <input matInput formControlName="hadSurgery" required />
+        <mat-error *ngIf="this.metaForm.get('hadSurgery')?.hasError">
+          Required.
+        </mat-error>
+      </mat-form-field>
+      <p>12) Have you gotten OT/PT in the past year? *</p>
+      <mat-form-field>
+        <input matInput formControlName="hadTherapy" required />
+        <mat-error *ngIf="this.metaForm.get('hadTherapy')?.hasError">
+          Required.
+        </mat-error>
+      </mat-form-field>
+      <p>
+        13) If you answered yes to question 12, are you still getting OT/PT?
+      </p>
+      <mat-form-field>
+        <input matInput formControlName="activeTherapy" />
+      </mat-form-field>
+      <p>
+        14) If you answered yes to question 12, have you been taught wheelchair
+        skills?
+      </p>
+      <mat-form-field>
+        <input matInput formControlName="wheelchairSkills" />
+      </mat-form-field>
+      <p>
+        15) If you answered yes to question 12, have you worked on making your
+        arm stronger?
+      </p>
+      <mat-form-field>
+        <input matInput formControlName="armStrengthening" />
+      </mat-form-field>
+      <p>16) If you answered no to question 12, why did you stop?</p>
+      <mat-form-field>
+        <input matInput formControlName="stopInfo" />
+      </mat-form-field>
+      <p>17) If you have shoulder pain, which shoulder is it in? *</p>
+      <mat-form-field>
+        <mat-select formControlName="painSide" required>
+          <mat-option value="right">Right</mat-option>
+          <mat-option value="left">Left</mat-option>
+          <mat-option value="both">Both</mat-option>
+          <mat-option value="neither">Neither</mat-option>
+        </mat-select>
+        <mat-error *ngIf="this.metaForm.get('painSide')?.hasError">
+          Required.
+        </mat-error>
+      </mat-form-field>
+      <p>
+        18) If you answered yes to question 17, how long have you had shoulder
+        pain?
+      </p>
+      <mat-form-field>
+        <input matInput formControlName="painTime" />
+      </mat-form-field>
+      <p>
+        19) Please put any more information that might be important to a change
+        in how you move.
+      </p>
+      <mat-form-field>
+        <textarea matInput formControlName="other"></textarea>
       </mat-form-field>
     </form>
 

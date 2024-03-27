@@ -1,6 +1,6 @@
-# WUSPI Shoulder Pain Rating Tool
+# Pediatric Wheelchair Users Functional Shoulder Pain Index - Rating Tool
 
-This is a web application used to assist medical staff in assessing wheelchair users' pain using the WUSPI questionnaire. The form asks for patient info and ratings on 15 different activities, then neatly presents the data once submitted. This data is not saved or stored anywhere - it is lost once the user closes the tab or refreshes.
+This is a web application used to assist medical staff in assessing wheelchair users' pain using a questionnaire created by Indiana University's Skills on Wheels program. The form asks for patient info and pain ratings on various different activities, then neatly presents the data once submitted. This data is not saved or stored anywhere - it is lost once the user closes the tab or refreshes.
 
 Created by [Alex Perry](https://twitter.com/pezvstheworld). Tweet @ me or DM me with any issues!
 
